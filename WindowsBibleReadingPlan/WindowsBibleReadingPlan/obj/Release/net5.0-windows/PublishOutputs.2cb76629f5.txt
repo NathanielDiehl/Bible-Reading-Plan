@@ -1,0 +1,6 @@
+D:\Documents\_Programming\WindowsBibleReadingPlan.exe
+D:\Documents\_Programming\WindowsBibleReadingPlan.dll
+D:\Documents\_Programming\WindowsBibleReadingPlan.deps.json
+D:\Documents\_Programming\WindowsBibleReadingPlan.runtimeconfig.json
+D:\Documents\_Programming\WindowsBibleReadingPlan.pdb
+D:\Documents\_Programming\Newtonsoft.Json.dll

@@ -1,0 +1,2 @@
+D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\Plans\BibleInYear.json
+ESV
