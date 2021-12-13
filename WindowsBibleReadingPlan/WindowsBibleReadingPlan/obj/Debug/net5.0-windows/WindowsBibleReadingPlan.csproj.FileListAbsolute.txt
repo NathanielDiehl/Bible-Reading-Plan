@@ -19,3 +19,4 @@ D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsB
 D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\obj\Debug\net5.0-windows\WindowsBibleReadingPlan.pdb
 D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\obj\Debug\net5.0-windows\WindowsBibleReadingPlan.genruntimeconfig.cache
 D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\obj\Debug\net5.0-windows\WindowsBibleReadingPlan.VersionSelector.resources
+D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\obj\Debug\net5.0-windows\WindowsBibleReadingPlan.Properties.Resources.resources

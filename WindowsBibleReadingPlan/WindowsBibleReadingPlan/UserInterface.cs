@@ -43,7 +43,10 @@ namespace WindowsBibleReadingPlan
         }
         private void ReadData()
         {
-            StreamReader r = new StreamReader(@"..\..\..\data.txt");
+            //StreamReader r = new StreamReader(@"..\..\..\data.txt");
+            StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data.txt"));
+
+
 
             _fileName = r.ReadLine();
             _version = r.ReadLine();
@@ -52,7 +55,8 @@ namespace WindowsBibleReadingPlan
 
         private void UpdateData()
         {
-            StreamWriter s = new StreamWriter(@"..\..\..\data.txt");
+            //StreamWriter s = new StreamWriter( @"..\..\..\data.txt");
+            StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data.txt"));
 
             s.WriteLine(_fileName);
             s.WriteLine(_version);
@@ -61,7 +65,9 @@ namespace WindowsBibleReadingPlan
 
         private void SelectPlan()
         {
-            uxOpenFileDialog.InitialDirectory = @"..\..\..\Plans\";
+            //uxOpenFileDialog.InitialDirectory = @"..\..\..\Plans\";
+            uxOpenFileDialog.InitialDirectory = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\Plans\");
+            
             if (uxOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -92,8 +98,9 @@ namespace WindowsBibleReadingPlan
             DateTime today = DateTime.Now;
 
             uxDate.Text = _months[today.Month-1] +" "+ today.Day.ToString();
-            int schedule = _currentPlan.Day - today.DayOfYear + _currentPlan.StartDay;
+            uxDate.Location = new Point(this.Size.Width / 2 - (uxDate.Size.Width / 2), uxDate.Location.Y);
 
+            int schedule = _currentPlan.Day - today.DayOfYear + _currentPlan.StartDay;
             _timeline = (_currentPlan.Day + _currentPlan.Extra);
             while (_timeline < 0)
                 _timeline += _currentPlan.Readings.Length;
@@ -107,9 +114,13 @@ namespace WindowsBibleReadingPlan
                 uxTimeLine.Text = (schedule-1) + " Days Ahead";
             else if (schedule < 0)
                 uxTimeLine.Text = -(schedule) + " Days Behind";
+            uxTimeLine.Location = new Point(this.Size.Width / 2 - (uxTimeLine.Size.Width / 2), uxTimeLine.Location.Y);
 
+            uxReading.Text = "To read:  " + _currentPlan.Readings[_timeline];
+            uxReading.Location = new Point(this.Size.Width / 2 - (uxReading.Size.Width / 2), uxReading.Location.Y);
 
-            uxReading.Text = _currentPlan.Readings[_timeline];
+            uxGoRead.Location = new Point(this.Size.Width / 2 - (uxGoRead.Size.Width / 2), uxGoRead.Location.Y);
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
