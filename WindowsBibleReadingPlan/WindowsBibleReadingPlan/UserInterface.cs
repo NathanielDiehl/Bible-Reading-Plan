@@ -28,39 +28,65 @@ namespace WindowsBibleReadingPlan
 
         private void ReadPlan()
         {
-            StreamReader r = new StreamReader(_fileName);
-            string jsonString = r.ReadToEnd();
-            _currentPlan = JsonConvert.DeserializeObject<Plan>(jsonString);
-            r.Close();
+            try
+            {
+                StreamReader r = new StreamReader(_fileName);
+                string jsonString = r.ReadToEnd();
+                _currentPlan = JsonConvert.DeserializeObject<Plan>(jsonString);
+                r.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void UpdatePlan()
         {
-            StreamWriter s = new StreamWriter(_fileName);
-            string jsonText = System.Text.Json.JsonSerializer.Serialize<Plan>(_currentPlan);
-            s.Write(jsonText);
-            s.Close();
+            try
+            {
+                StreamWriter s = new StreamWriter(_fileName);
+                string jsonText = System.Text.Json.JsonSerializer.Serialize<Plan>(_currentPlan);
+                s.Write(jsonText);
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
         private void ReadData()
         {
-            //StreamReader r = new StreamReader(@"..\..\..\data.txt");
-            StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data.txt"));
+            try
+            {
+                //StreamReader r = new StreamReader(@"..\..\..\data.txt");
+                StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data.txt"));
 
-
-
-            _fileName = r.ReadLine();
-            _version = r.ReadLine();
-            r.Close();
+                _fileName = r.ReadLine();
+                _version = r.ReadLine();
+                r.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void UpdateData()
         {
-            //StreamWriter s = new StreamWriter( @"..\..\..\data.txt");
-            StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data.txt"));
+            try
+            {
+                //StreamWriter s = new StreamWriter( @"..\..\..\data.txt");
+                StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data.txt"));
 
-            s.WriteLine(_fileName);
-            s.WriteLine(_version);
-            s.Close();
+                s.WriteLine(_fileName);
+                s.WriteLine(_version);
+                s.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void SelectPlan()
