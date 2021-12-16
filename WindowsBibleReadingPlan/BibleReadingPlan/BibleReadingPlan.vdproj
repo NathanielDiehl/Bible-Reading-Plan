@@ -21,6 +21,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7C86F4568F264C49AF50C1E7446DA8A4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_9B27103E4E654D58815BB254A4122CB4"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -34,12 +40,6 @@
         "Entry"
         {
         "MsmKey" = "8:_B72298AAC4494DD4835FD9FB76B77BCE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D3166EE358304D1AA5C510F9B5C60DA8"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -166,6 +166,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7C86F4568F264C49AF50C1E7446DA8A4"
+            {
+            "SourcePath" = "8:..\\WindowsBibleReadingPlan\\data"
+            "TargetName" = "8:data"
+            "Tag" = "8:"
+            "Folder" = "8:_1D00E11B209A4C4EAAED037B2C1287D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9B27103E4E654D58815BB254A4122CB4"
             {
             "SourcePath" = "8:..\\WindowsBibleReadingPlan\\Plans\\OldTestament.json"
@@ -212,26 +232,6 @@
             "TargetName" = "8:NewTestament.json"
             "Tag" = "8:"
             "Folder" = "8:_E22FEE7C212448C3B6E55366F5E71A77"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D3166EE358304D1AA5C510F9B5C60DA8"
-            {
-            "SourcePath" = "8:..\\WindowsBibleReadingPlan\\data.txt"
-            "TargetName" = "8:data.txt"
-            "Tag" = "8:"
-            "Folder" = "8:_1D00E11B209A4C4EAAED037B2C1287D1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -314,7 +314,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BibleReadingPlan"
         "ProductCode" = "8:{C0039B79-E54D-4664-B730-A493634E5717}"
-        "PackageCode" = "8:{814F92F9-CF95-4FCD-A43C-0C143FC8E580}"
+        "PackageCode" = "8:{3E163C4A-1764-4B1C-82AD-352945E271F7}"
         "UpgradeCode" = "8:{EF09F0A5-09D0-4706-8FBF-6A2F48086F32}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"

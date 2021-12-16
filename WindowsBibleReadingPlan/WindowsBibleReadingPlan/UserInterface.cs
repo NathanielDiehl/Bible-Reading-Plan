@@ -15,11 +15,13 @@ namespace WindowsBibleReadingPlan
     public partial class Form1 : Form
     {
         private Plan _currentPlan;
-        private string _fileName;
-
+        
         private int _timeline;
         private static string[] _months = new string[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
+
+        private string _fileName;
         private string _version;
+        private bool _allowExtraReading;
 
         public Form1()
         {
@@ -59,11 +61,12 @@ namespace WindowsBibleReadingPlan
         {
             try
             {
-                //StreamReader r = new StreamReader(@"..\..\..\data.txt");
-                StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data.txt"));
+                StreamReader r = new StreamReader(@"..\..\..\data");
+                //StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
 
                 _fileName = r.ReadLine();
                 _version = r.ReadLine();
+                _allowExtraReading = (r.ReadLine() == "0") ? false : true;
                 r.Close();
             }
             catch (Exception ex)
@@ -76,11 +79,12 @@ namespace WindowsBibleReadingPlan
         {
             try
             {
-                //StreamWriter s = new StreamWriter( @"..\..\..\data.txt");
-                StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data.txt"));
+                StreamWriter s = new StreamWriter( @"..\..\..\data");
+                //StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
 
                 s.WriteLine(_fileName);
                 s.WriteLine(_version);
+                s.WriteLine((_allowExtraReading) ? 1 : 0);
                 s.Close();
             }
             catch (Exception ex)
@@ -91,16 +95,19 @@ namespace WindowsBibleReadingPlan
 
         private void SelectPlan()
         {
-            //uxOpenFileDialog.InitialDirectory = @"..\..\..\Plans\";
-            uxOpenFileDialog.InitialDirectory = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\Plans\");
-            
+            uxOpenFileDialog.InitialDirectory = @"..\..\..\Plans\";
+            //uxOpenFileDialog.InitialDirectory = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\Plans\");
+
+            //MessageBox.Show(uxOpenFileDialog.InitialDirectory);
+            //Console.WriteLine(uxOpenFileDialog.InitialDirectory);
+
             if (uxOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
                     _fileName = uxOpenFileDialog.FileName;
                     UpdateData();
-                    ReadPlan();
+                    //ReadPlan();
                 }
                 catch (Exception ex)
                 {
@@ -147,15 +154,21 @@ namespace WindowsBibleReadingPlan
 
             uxGoRead.Location = new Point(this.Size.Width / 2 - (uxGoRead.Size.Width / 2), uxGoRead.Location.Y);
 
+            uxDidntRead.Enabled = true;
+            uxDidntReadAhead.Enabled = true;
+            uxGoRead.Enabled = true;
+            uxRead.Enabled = true;
+            uxReadAhead.Enabled = true;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             ReadData();
-            if (_fileName == "0")
-                SelectPlan();
-            ReadPlan();
-            SetUp();
+            if (_fileName != "0") {
+                ReadPlan();
+                SetUp();
+            }
         }
 
         private void selectNewReadingPlanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -166,9 +179,12 @@ namespace WindowsBibleReadingPlan
 
         private void selectOldReadingPlanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ReadPlan();
             SelectPlan();
-            SetUp();
+            if (_fileName != "0")
+            {
+                ReadPlan();
+                SetUp();
+            }
         }
 
         private void resetReadingPlanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -201,6 +217,12 @@ namespace WindowsBibleReadingPlan
             UpdatePlan();
             SetUp();
         }
+        private void uxDidntReadAhead_Click(object sender, EventArgs e)
+        {
+            _currentPlan.Extra--;
+            UpdatePlan();
+            SetUp();
+        }
 
         private void uxGoRead_Click(object sender, EventArgs e)
         {
@@ -217,16 +239,12 @@ namespace WindowsBibleReadingPlan
             VersionSelector selector = new VersionSelector();
             selector.textBox1.Text = _version;
 
-            // Show testDialog as a modal dialog and determine if DialogResult = OK.
             if (selector.ShowDialog(this) == DialogResult.OK)
             {
-                // Read the contents of testDialog's TextBox.
                 _version = selector.textBox1.Text;
             }
             
             selector.Dispose();
         }
-
-        
     }
 }

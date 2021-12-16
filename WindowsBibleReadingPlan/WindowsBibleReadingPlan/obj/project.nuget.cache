@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mMuJWkUNhFZBmUHc2U5dNcFMim2Ocd7OuYscjzTEjhMEuk0SfCxQEEDjrNSs3+kGn0qZ4wcXIx2CFkC9fLheEg==",
+  "dgSpecHash": "3dNVtDg7poKBM4mLa1iYfEqpRkgu1oQcdJtH252G/D4rLFWpSi7D6kwCMY4C8aok3xsrDOAyMAcvQlYuE9CqEQ==",
   "success": true,
-  "projectFilePath": "D:\\Documents\\_Programming\\C#\\Bible-Reading-Plan\\WindowsBibleReadingPlan\\WindowsBibleReadingPlan\\WindowsBibleReadingPlan.csproj",
+  "projectFilePath": "C:\\Users\\Nathan\\Documents\\Programming\\C#\\Bible-Reading-Plan\\WindowsBibleReadingPlan\\WindowsBibleReadingPlan\\WindowsBibleReadingPlan.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Nathan Diehl\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Nathan\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }
