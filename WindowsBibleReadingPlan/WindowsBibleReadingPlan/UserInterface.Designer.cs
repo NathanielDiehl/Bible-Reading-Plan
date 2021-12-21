@@ -54,7 +54,7 @@ namespace WindowsBibleReadingPlan
             this.uxDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxDate.AutoSize = true;
             this.uxDate.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxDate.Location = new System.Drawing.Point(280, 53);
+            this.uxDate.Location = new System.Drawing.Point(257, 53);
             this.uxDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxDate.Name = "uxDate";
             this.uxDate.Size = new System.Drawing.Size(82, 36);
@@ -66,7 +66,7 @@ namespace WindowsBibleReadingPlan
             this.uxTimeLine.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxTimeLine.AutoSize = true;
             this.uxTimeLine.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxTimeLine.Location = new System.Drawing.Point(227, 89);
+            this.uxTimeLine.Location = new System.Drawing.Point(204, 89);
             this.uxTimeLine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxTimeLine.Name = "uxTimeLine";
             this.uxTimeLine.Size = new System.Drawing.Size(187, 41);
@@ -82,7 +82,7 @@ namespace WindowsBibleReadingPlan
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(625, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(578, 35);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -136,7 +136,7 @@ namespace WindowsBibleReadingPlan
             // 
             this.uxReading.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxReading.AutoSize = true;
-            this.uxReading.Location = new System.Drawing.Point(265, 136);
+            this.uxReading.Location = new System.Drawing.Point(242, 136);
             this.uxReading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxReading.Name = "uxReading";
             this.uxReading.Size = new System.Drawing.Size(97, 32);
@@ -148,7 +148,7 @@ namespace WindowsBibleReadingPlan
             this.uxRead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.uxRead.Enabled = false;
             this.uxRead.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxRead.Location = new System.Drawing.Point(426, 211);
+            this.uxRead.Location = new System.Drawing.Point(392, 240);
             this.uxRead.Margin = new System.Windows.Forms.Padding(4);
             this.uxRead.Name = "uxRead";
             this.uxRead.Size = new System.Drawing.Size(186, 41);
@@ -162,7 +162,7 @@ namespace WindowsBibleReadingPlan
             this.uxReadAhead.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.uxReadAhead.Enabled = false;
             this.uxReadAhead.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxReadAhead.Location = new System.Drawing.Point(426, 268);
+            this.uxReadAhead.Location = new System.Drawing.Point(392, 289);
             this.uxReadAhead.Margin = new System.Windows.Forms.Padding(4);
             this.uxReadAhead.Name = "uxReadAhead";
             this.uxReadAhead.Size = new System.Drawing.Size(186, 41);
@@ -175,7 +175,7 @@ namespace WindowsBibleReadingPlan
             // 
             this.uxDidntRead.Enabled = false;
             this.uxDidntRead.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxDidntRead.Location = new System.Drawing.Point(13, 211);
+            this.uxDidntRead.Location = new System.Drawing.Point(0, 241);
             this.uxDidntRead.Margin = new System.Windows.Forms.Padding(4);
             this.uxDidntRead.Name = "uxDidntRead";
             this.uxDidntRead.Size = new System.Drawing.Size(186, 41);
@@ -192,10 +192,10 @@ namespace WindowsBibleReadingPlan
             // 
             this.uxGoRead.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.uxGoRead.Enabled = false;
-            this.uxGoRead.Location = new System.Drawing.Point(236, 210);
+            this.uxGoRead.Location = new System.Drawing.Point(213, 241);
             this.uxGoRead.Margin = new System.Windows.Forms.Padding(4);
             this.uxGoRead.Name = "uxGoRead";
-            this.uxGoRead.Size = new System.Drawing.Size(153, 99);
+            this.uxGoRead.Size = new System.Drawing.Size(156, 89);
             this.uxGoRead.TabIndex = 11;
             this.uxGoRead.Text = "Go Read";
             this.uxGoRead.UseVisualStyleBackColor = true;
@@ -205,7 +205,7 @@ namespace WindowsBibleReadingPlan
             // 
             this.uxDidntReadAhead.Enabled = false;
             this.uxDidntReadAhead.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.uxDidntReadAhead.Location = new System.Drawing.Point(12, 268);
+            this.uxDidntReadAhead.Location = new System.Drawing.Point(0, 289);
             this.uxDidntReadAhead.Name = "uxDidntReadAhead";
             this.uxDidntReadAhead.Size = new System.Drawing.Size(186, 41);
             this.uxDidntReadAhead.TabIndex = 12;
@@ -217,7 +217,7 @@ namespace WindowsBibleReadingPlan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 353);
+            this.ClientSize = new System.Drawing.Size(578, 344);
             this.Controls.Add(this.uxDidntReadAhead);
             this.Controls.Add(this.uxGoRead);
             this.Controls.Add(this.uxDidntRead);

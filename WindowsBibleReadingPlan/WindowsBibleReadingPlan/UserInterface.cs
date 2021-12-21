@@ -16,7 +16,7 @@ namespace WindowsBibleReadingPlan
     {
         private Plan _currentPlan;
         
-        private int _timeline;
+        private int _timeline = 0;
         private static string[] _months = new string[] { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 
         private string _fileName;
@@ -61,8 +61,8 @@ namespace WindowsBibleReadingPlan
         {
             try
             {
-                StreamReader r = new StreamReader(@"..\..\..\data");
-                //StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
+                //StreamReader r = new StreamReader(@"..\..\..\data");
+                StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
 
                 _fileName = r.ReadLine();
                 _version = r.ReadLine();
@@ -79,8 +79,8 @@ namespace WindowsBibleReadingPlan
         {
             try
             {
-                StreamWriter s = new StreamWriter( @"..\..\..\data");
-                //StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
+                //StreamWriter s = new StreamWriter( @"..\..\..\data");
+                StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
 
                 s.WriteLine(_fileName);
                 s.WriteLine(_version);
@@ -95,8 +95,8 @@ namespace WindowsBibleReadingPlan
 
         private void SelectPlan()
         {
-            uxOpenFileDialog.InitialDirectory = @"..\..\..\Plans\";
-            //uxOpenFileDialog.InitialDirectory = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\Plans\");
+            //uxOpenFileDialog.InitialDirectory = @"..\..\..\Plans\";
+            uxOpenFileDialog.InitialDirectory = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\Plans\");
 
             //MessageBox.Show(uxOpenFileDialog.InitialDirectory);
             //Console.WriteLine(uxOpenFileDialog.InitialDirectory);
@@ -115,6 +115,18 @@ namespace WindowsBibleReadingPlan
                 }
             }
         }
+        private void LineUp()
+        {
+            uxDate.Location = new Point(this.Size.Width / 2 - (uxDate.Size.Width / 2) -10, uxDate.Location.Y);
+            uxTimeLine.Location = new Point(this.Size.Width / 2 - (uxTimeLine.Size.Width / 2) - 10, uxTimeLine.Location.Y);
+            uxReading.Location = new Point(this.Size.Width / 2 - (uxReading.Size.Width / 2) - 10, uxReading.Location.Y);
+
+            uxGoRead.Location = new Point(this.Size.Width / 2 - (uxGoRead.Size.Width / 2) -10, uxGoRead.Location.Y);
+            uxRead.Location = new Point(this.Size.Width - (uxRead.Size.Width) - 30, uxRead.Location.Y);
+            uxReadAhead.Location = new Point(this.Size.Width - (uxReadAhead.Size.Width) - 30, uxReadAhead.Location.Y);
+            uxDidntRead.Location = new Point(10, uxDidntRead.Location.Y);
+            uxDidntReadAhead.Location = new Point(10, uxDidntReadAhead.Location.Y);
+        }
 
         private void SetUp()
         {
@@ -131,7 +143,6 @@ namespace WindowsBibleReadingPlan
             DateTime today = DateTime.Now;
 
             uxDate.Text = _months[today.Month-1] +" "+ today.Day.ToString();
-            uxDate.Location = new Point(this.Size.Width / 2 - (uxDate.Size.Width / 2), uxDate.Location.Y);
 
             int schedule = _currentPlan.Day - today.DayOfYear + _currentPlan.StartDay;
             _timeline = (_currentPlan.Day + _currentPlan.Extra);
@@ -147,18 +158,17 @@ namespace WindowsBibleReadingPlan
                 uxTimeLine.Text = (schedule-1) + " Days Ahead";
             else if (schedule < 0)
                 uxTimeLine.Text = -(schedule) + " Days Behind";
-            uxTimeLine.Location = new Point(this.Size.Width / 2 - (uxTimeLine.Size.Width / 2), uxTimeLine.Location.Y);
 
             uxReading.Text = "To read:  " + _currentPlan.Readings[_timeline];
-            uxReading.Location = new Point(this.Size.Width / 2 - (uxReading.Size.Width / 2), uxReading.Location.Y);
 
-            uxGoRead.Location = new Point(this.Size.Width / 2 - (uxGoRead.Size.Width / 2), uxGoRead.Location.Y);
+
 
             uxDidntRead.Enabled = true;
             uxDidntReadAhead.Enabled = true;
             uxGoRead.Enabled = true;
             uxRead.Enabled = true;
             uxReadAhead.Enabled = true;
+            LineUp();
 
         }
 
@@ -168,6 +178,14 @@ namespace WindowsBibleReadingPlan
             if (_fileName != "0") {
                 ReadPlan();
                 SetUp();
+            }
+            else
+            {
+                _currentPlan = new Plan();
+                _currentPlan.Day = 0;
+                _currentPlan.Extra = 0;
+                _currentPlan.StartDay = 0;
+                LineUp();
             }
         }
 
