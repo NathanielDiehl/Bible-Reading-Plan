@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +13,7 @@ using System.Windows.Forms;
 
 namespace WindowsBibleReadingPlan
 {
-    public partial class Form1 : Form
+    public partial class UserInterface : Form
     {
         private Plan _currentPlan;
         
@@ -21,9 +22,11 @@ namespace WindowsBibleReadingPlan
 
         private string _fileName;
         private string _version;
-        private bool _allowExtraReading;
+        private bool _allowExtraReading = false;
+        private bool _runAtStartUp = false;
 
-        public Form1()
+
+        public UserInterface()
         {
             InitializeComponent();
         }
@@ -67,6 +70,7 @@ namespace WindowsBibleReadingPlan
                 _fileName = r.ReadLine();
                 _version = r.ReadLine();
                 _allowExtraReading = (r.ReadLine() == "0") ? false : true;
+                _runAtStartUp = (r.ReadLine() == "0") ? false : true;
                 r.Close();
             }
             catch (Exception ex)
@@ -85,6 +89,7 @@ namespace WindowsBibleReadingPlan
                 s.WriteLine(_fileName);
                 s.WriteLine(_version);
                 s.WriteLine((_allowExtraReading) ? 1 : 0);
+                s.WriteLine((_runAtStartUp) ? 1 : 0);
                 s.Close();
             }
             catch (Exception ex)
@@ -98,16 +103,12 @@ namespace WindowsBibleReadingPlan
             //uxOpenFileDialog.InitialDirectory = @"..\..\..\Plans\";
             uxOpenFileDialog.InitialDirectory = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\Plans\");
 
-            //MessageBox.Show(uxOpenFileDialog.InitialDirectory);
-            //Console.WriteLine(uxOpenFileDialog.InitialDirectory);
-
             if (uxOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
                     _fileName = uxOpenFileDialog.FileName;
                     UpdateData();
-                    //ReadPlan();
                 }
                 catch (Exception ex)
                 {
@@ -126,6 +127,23 @@ namespace WindowsBibleReadingPlan
             uxReadAhead.Location = new Point(this.Size.Width - (uxReadAhead.Size.Width) - 30, uxReadAhead.Location.Y);
             uxDidntRead.Location = new Point(10, uxDidntRead.Location.Y);
             uxDidntReadAhead.Location = new Point(10, uxDidntReadAhead.Location.Y);
+
+            if (_allowExtraReading)
+            {
+                uxReadAhead.Visible = true;
+                uxDidntReadAhead.Visible = true;
+
+                uxRead.Height = uxReadAhead.Height;
+                uxDidntRead.Height = uxDidntReadAhead.Height;
+            }
+            else
+            {
+                uxReadAhead.Visible = false;
+                uxDidntReadAhead.Visible = false;
+
+                uxRead.Height = uxGoRead.Height;
+                uxDidntRead.Height = uxGoRead.Height;
+            }
         }
 
         private void SetUp()
@@ -174,6 +192,7 @@ namespace WindowsBibleReadingPlan
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            LineUp();
             ReadData();
             if (_fileName != "0") {
                 ReadPlan();
@@ -263,6 +282,34 @@ namespace WindowsBibleReadingPlan
             }
             
             selector.Dispose();
+        }
+
+        private void allowExtraReadingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_allowExtraReading)
+                allowExtraReadingToolStripMenuItem.Text = "Allow Extra Reading";
+            else
+                allowExtraReadingToolStripMenuItem.Text = "Don't Allow Extra Reading";
+
+            _allowExtraReading = !_allowExtraReading;
+            LineUp();
+        }
+
+        private void runAtStartUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistryKey key = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            if (_runAtStartUp)
+            {
+                allowExtraReadingToolStripMenuItem.Text = "Run at Start Up";
+                key.DeleteValue("bible_reading_plan", false);
+            }
+            else
+            {
+                allowExtraReadingToolStripMenuItem.Text = "Don't Run at Start Up";
+                key.SetValue("bible_reading_plan", Application.ExecutablePath);
+            }
+            _runAtStartUp = !_runAtStartUp;
         }
     }
 }

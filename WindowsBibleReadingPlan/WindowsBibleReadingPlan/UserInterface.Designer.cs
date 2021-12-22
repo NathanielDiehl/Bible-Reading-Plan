@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsBibleReadingPlan
 {
-    partial class Form1
+    partial class UserInterface
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace WindowsBibleReadingPlan
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserInterface));
             this.uxDate = new System.Windows.Forms.Label();
             this.uxTimeLine = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -37,8 +37,9 @@ namespace WindowsBibleReadingPlan
             this.selectNewReadingPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.selectOldReadingPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetReadingPlanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.uxAllowExtraReading = new System.Windows.Forms.ToolStripMenuItem();
             this.setBibleVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.allowExtraReadingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxReading = new System.Windows.Forms.Label();
             this.uxRead = new System.Windows.Forms.Button();
             this.uxReadAhead = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@ namespace WindowsBibleReadingPlan
             this.uxOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.uxGoRead = new System.Windows.Forms.Button();
             this.uxDidntReadAhead = new System.Windows.Forms.Button();
+            this.runAtStartUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +59,7 @@ namespace WindowsBibleReadingPlan
             this.uxDate.Location = new System.Drawing.Point(257, 53);
             this.uxDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxDate.Name = "uxDate";
-            this.uxDate.Size = new System.Drawing.Size(82, 36);
+            this.uxDate.Size = new System.Drawing.Size(71, 30);
             this.uxDate.TabIndex = 2;
             this.uxDate.Text = "Today";
             // 
@@ -69,7 +71,7 @@ namespace WindowsBibleReadingPlan
             this.uxTimeLine.Location = new System.Drawing.Point(204, 89);
             this.uxTimeLine.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxTimeLine.Name = "uxTimeLine";
-            this.uxTimeLine.Size = new System.Drawing.Size(187, 41);
+            this.uxTimeLine.Size = new System.Drawing.Size(155, 35);
             this.uxTimeLine.TabIndex = 3;
             this.uxTimeLine.Text = "On Schedule";
             // 
@@ -78,11 +80,11 @@ namespace WindowsBibleReadingPlan
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
-            this.settingsToolStripMenuItem});
+            this.uxAllowExtraReading});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(578, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(578, 30);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -93,44 +95,53 @@ namespace WindowsBibleReadingPlan
             this.selectOldReadingPlanToolStripMenuItem,
             this.resetReadingPlanToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // selectNewReadingPlanToolStripMenuItem
             // 
             this.selectNewReadingPlanToolStripMenuItem.Name = "selectNewReadingPlanToolStripMenuItem";
-            this.selectNewReadingPlanToolStripMenuItem.Size = new System.Drawing.Size(307, 34);
+            this.selectNewReadingPlanToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.selectNewReadingPlanToolStripMenuItem.Text = "Select New Reading Plan";
             this.selectNewReadingPlanToolStripMenuItem.Click += new System.EventHandler(this.selectNewReadingPlanToolStripMenuItem_Click);
             // 
             // selectOldReadingPlanToolStripMenuItem
             // 
             this.selectOldReadingPlanToolStripMenuItem.Name = "selectOldReadingPlanToolStripMenuItem";
-            this.selectOldReadingPlanToolStripMenuItem.Size = new System.Drawing.Size(307, 34);
+            this.selectOldReadingPlanToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.selectOldReadingPlanToolStripMenuItem.Text = "Select Old Reading Plan";
             this.selectOldReadingPlanToolStripMenuItem.Click += new System.EventHandler(this.selectOldReadingPlanToolStripMenuItem_Click);
             // 
             // resetReadingPlanToolStripMenuItem
             // 
             this.resetReadingPlanToolStripMenuItem.Name = "resetReadingPlanToolStripMenuItem";
-            this.resetReadingPlanToolStripMenuItem.Size = new System.Drawing.Size(307, 34);
+            this.resetReadingPlanToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.resetReadingPlanToolStripMenuItem.Text = "Reset Reading Plan";
             this.resetReadingPlanToolStripMenuItem.Click += new System.EventHandler(this.resetReadingPlanToolStripMenuItem_Click);
             // 
-            // settingsToolStripMenuItem
+            // uxAllowExtraReading
             // 
-            this.settingsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setBibleVersionToolStripMenuItem});
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(92, 29);
-            this.settingsToolStripMenuItem.Text = "Settings";
+            this.uxAllowExtraReading.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.setBibleVersionToolStripMenuItem,
+            this.allowExtraReadingToolStripMenuItem,
+            this.runAtStartUpToolStripMenuItem});
+            this.uxAllowExtraReading.Name = "uxAllowExtraReading";
+            this.uxAllowExtraReading.Size = new System.Drawing.Size(76, 24);
+            this.uxAllowExtraReading.Text = "Settings";
             // 
             // setBibleVersionToolStripMenuItem
             // 
             this.setBibleVersionToolStripMenuItem.Name = "setBibleVersionToolStripMenuItem";
-            this.setBibleVersionToolStripMenuItem.Size = new System.Drawing.Size(245, 34);
+            this.setBibleVersionToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.setBibleVersionToolStripMenuItem.Text = "Set Bible Version";
             this.setBibleVersionToolStripMenuItem.Click += new System.EventHandler(this.setBibleVersionToolStripMenuItem_Click);
+            // 
+            // allowExtraReadingToolStripMenuItem
+            // 
+            this.allowExtraReadingToolStripMenuItem.Name = "allowExtraReadingToolStripMenuItem";
+            this.allowExtraReadingToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.allowExtraReadingToolStripMenuItem.Text = "Allow Extra Reading";
+            this.allowExtraReadingToolStripMenuItem.Click += new System.EventHandler(this.allowExtraReadingToolStripMenuItem_Click);
             // 
             // uxReading
             // 
@@ -139,7 +150,7 @@ namespace WindowsBibleReadingPlan
             this.uxReading.Location = new System.Drawing.Point(242, 136);
             this.uxReading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.uxReading.Name = "uxReading";
-            this.uxReading.Size = new System.Drawing.Size(97, 32);
+            this.uxReading.Size = new System.Drawing.Size(80, 28);
             this.uxReading.TabIndex = 6;
             this.uxReading.Text = "Passage";
             // 
@@ -169,6 +180,7 @@ namespace WindowsBibleReadingPlan
             this.uxReadAhead.TabIndex = 9;
             this.uxReadAhead.Text = "Read Ahead";
             this.uxReadAhead.UseVisualStyleBackColor = true;
+            this.uxReadAhead.Visible = false;
             this.uxReadAhead.Click += new System.EventHandler(this.uxReadAhead_Click);
             // 
             // uxDidntRead
@@ -211,11 +223,19 @@ namespace WindowsBibleReadingPlan
             this.uxDidntReadAhead.TabIndex = 12;
             this.uxDidntReadAhead.Text = "Didn\'t Read Ahead";
             this.uxDidntReadAhead.UseVisualStyleBackColor = true;
+            this.uxDidntReadAhead.Visible = false;
             this.uxDidntReadAhead.Click += new System.EventHandler(this.uxDidntReadAhead_Click);
             // 
-            // Form1
+            // runAtStartUpToolStripMenuItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.runAtStartUpToolStripMenuItem.Name = "runAtStartUpToolStripMenuItem";
+            this.runAtStartUpToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.runAtStartUpToolStripMenuItem.Text = "Run at Start Up";
+            this.runAtStartUpToolStripMenuItem.Click += new System.EventHandler(this.runAtStartUpToolStripMenuItem_Click);
+            // 
+            // UserInterface
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 344);
             this.Controls.Add(this.uxDidntReadAhead);
@@ -231,7 +251,7 @@ namespace WindowsBibleReadingPlan
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
+            this.Name = "UserInterface";
             this.Text = "Bible Reading Plan";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -255,10 +275,12 @@ namespace WindowsBibleReadingPlan
         private System.Windows.Forms.Button uxDidntRead;
         private System.Windows.Forms.OpenFileDialog uxOpenFileDialog;
         private System.Windows.Forms.Button uxGoRead;
-        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem uxAllowExtraReading;
         private System.Windows.Forms.ToolStripMenuItem setBibleVersionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetReadingPlanToolStripMenuItem;
         private System.Windows.Forms.Button uxDidntReadAhead;
+        private System.Windows.Forms.ToolStripMenuItem allowExtraReadingToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem runAtStartUpToolStripMenuItem;
     }
 }
 

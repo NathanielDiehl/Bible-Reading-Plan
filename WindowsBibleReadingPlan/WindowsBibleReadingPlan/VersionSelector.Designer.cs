@@ -51,18 +51,18 @@ namespace WindowsBibleReadingPlan
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 54);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(369, 20);
+            this.label2.Size = new System.Drawing.Size(372, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Input the acronym of the bible version you want to use";
+            this.label2.Text = "Input the acronym of the bible version you want to use.";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(187, 74);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 20);
+            this.label3.Size = new System.Drawing.Size(198, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Capitulation does not mater";
+            this.label3.Text = "Capitulation does not mater.";
             // 
             // button1
             // 
