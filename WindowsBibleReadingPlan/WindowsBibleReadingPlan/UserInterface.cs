@@ -65,7 +65,8 @@ namespace WindowsBibleReadingPlan
             try
             {
                 //StreamReader r = new StreamReader(@"..\..\..\data");
-                StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
+                //StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
+                StreamReader r = new StreamReader(@".\data");
 
                 _fileName = r.ReadLine();
                 _version = r.ReadLine();
@@ -84,7 +85,9 @@ namespace WindowsBibleReadingPlan
             try
             {
                 //StreamWriter s = new StreamWriter( @"..\..\..\data");
-                StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
+                //StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
+                StreamWriter s = new StreamWriter(@".\data");
+
 
                 s.WriteLine(_fileName);
                 s.WriteLine(_version);
@@ -101,7 +104,9 @@ namespace WindowsBibleReadingPlan
         private void SelectPlan()
         {
             //uxOpenFileDialog.InitialDirectory = @"..\..\..\Plans\";
-            uxOpenFileDialog.InitialDirectory = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\Plans\");
+            uxOpenFileDialog.InitialDirectory = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"\..\Plans\");
+            
+            //MessageBox.Show(uxOpenFileDialog.InitialDirectory);
 
             if (uxOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -310,6 +315,7 @@ namespace WindowsBibleReadingPlan
                 key.SetValue("bible_reading_plan", Application.ExecutablePath);
             }
             _runAtStartUp = !_runAtStartUp;
+            UpdateData();
         }
     }
 }
