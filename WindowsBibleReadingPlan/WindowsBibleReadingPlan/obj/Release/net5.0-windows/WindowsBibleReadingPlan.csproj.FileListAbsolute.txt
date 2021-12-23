@@ -41,4 +41,3 @@ C:\Users\Nathan\Documents\Programming\C#\Bible-Reading-Plan\WindowsBibleReadingP
 C:\Users\Nathan\Documents\Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\obj\Release\net5.0-windows\WindowsBibleReadingPlan.genruntimeconfig.cache
 D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\obj\Release\net5.0-windows\WindowsBibleReadingPlan.PlanSelector.resources
 D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\obj\Release\net5.0-windows\WindowsBibleReadingPlan.UserInterface.resources
-D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\obj\Release\net5.0-windows\WindowsBibleReadingPlan.csproj.AssemblyReference.cache
