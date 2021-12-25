@@ -40,6 +40,10 @@ namespace WindowsBibleReadingPlan
                 _currentPlan = JsonConvert.DeserializeObject<Plan>(jsonString);
                 r.Close();
             }
+            catch (System.UnauthorizedAccessException)
+            {
+                MessageBox.Show("Program files are stored in a protected location \nPlease uninstall application and reinstall in a different location");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -55,6 +59,10 @@ namespace WindowsBibleReadingPlan
                 s.Write(jsonText);
                 s.Close();
             }
+            catch (System.UnauthorizedAccessException)
+            {
+                MessageBox.Show("Program files are stored in a protected location \nPlease uninstall application and reinstall in a different location");
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
@@ -65,7 +73,7 @@ namespace WindowsBibleReadingPlan
             try
             {
                 //StreamReader r = new StreamReader(@"..\..\..\data");
-                //StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
+                //StreamReader r = new StreamReader(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"\..\data"));
                 StreamReader r = new StreamReader(@".\data");
 
                 _fileName = r.ReadLine();
@@ -85,7 +93,7 @@ namespace WindowsBibleReadingPlan
             try
             {
                 //StreamWriter s = new StreamWriter( @"..\..\..\data");
-                //StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"..\data"));
+                //StreamWriter s = new StreamWriter(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"\..\data"));
                 StreamWriter s = new StreamWriter(@".\data");
 
 
@@ -94,6 +102,10 @@ namespace WindowsBibleReadingPlan
                 s.WriteLine((_allowExtraReading) ? 1 : 0);
                 s.WriteLine((_runAtStartUp) ? 1 : 0);
                 s.Close();
+            }
+            catch (System.UnauthorizedAccessException)
+            {
+                MessageBox.Show("Program files are stored in a protected location \nPlease uninstall application and reinstall in a different location");
             }
             catch (Exception ex)
             {
@@ -104,10 +116,16 @@ namespace WindowsBibleReadingPlan
         private void SelectPlan()
         {
             //uxOpenFileDialog.InitialDirectory = @"..\..\..\Plans\";
-            uxOpenFileDialog.InitialDirectory = Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"\..\Plans\");
-            
-            //MessageBox.Show(uxOpenFileDialog.InitialDirectory);
+            //FileAttributes f = File.GetAttributes(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"\..\Plans\"));
+            //Environment.SpecialFolder.
 
+            string loc = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            uxOpenFileDialog.InitialDirectory = loc.Substring(0, loc.LastIndexOf('\\')) + @"\Plans\"; //Path.Combine(loc.Substring(0, loc.LastIndexOf('\\')), @"\Plans\");
+            //uxOpenFileDialog.InitialDirectory = LinkToFile(Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, @"\..\Plans"));
+
+            //MessageBox.Show(uxOpenFileDialog.InitialDirectory);
+            
+            
             if (uxOpenFileDialog.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -162,6 +180,18 @@ namespace WindowsBibleReadingPlan
             string jsonText = System.Text.Json.JsonSerializer.Serialize<Plan>(newplan);
             s.Write(jsonText);
             s.Close();*/
+
+            selectOldReadingPlanButton.Visible = false;
+            selectNewReadingPlanButton.Visible = false;
+
+            uxDidntRead.Visible = true;
+            uxGoRead.Visible = true;
+            uxRead.Visible = true;
+
+            uxReading.Visible = true;
+            uxTimeLine.Visible = true;
+            uxReading.Visible = true;
+
 
             DateTime today = DateTime.Now;
 
@@ -316,6 +346,16 @@ namespace WindowsBibleReadingPlan
             }
             _runAtStartUp = !_runAtStartUp;
             UpdateData();
+        }
+
+        private void selectNewReadingPlanButton_Click(object sender, EventArgs e)
+        {
+            selectNewReadingPlanToolStripMenuItem_Click(sender, e);
+        }
+
+        private void selectOldReadingPlanButton_Click(object sender, EventArgs e)
+        {
+            selectOldReadingPlanToolStripMenuItem_Click(sender, e);
         }
     }
 }
