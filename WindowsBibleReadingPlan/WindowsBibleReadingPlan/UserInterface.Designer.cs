@@ -40,7 +40,6 @@ namespace WindowsBibleReadingPlan
             this.uxAllowExtraReading = new System.Windows.Forms.ToolStripMenuItem();
             this.setBibleVersionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allowExtraReadingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.runAtStartUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.uxReading = new System.Windows.Forms.Label();
             this.uxRead = new System.Windows.Forms.Button();
             this.uxReadAhead = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@ namespace WindowsBibleReadingPlan
             this.uxDidntReadAhead = new System.Windows.Forms.Button();
             this.selectNewReadingPlanButton = new System.Windows.Forms.Button();
             this.selectOldReadingPlanButton = new System.Windows.Forms.Button();
+            this.enableColoredTextToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +121,7 @@ namespace WindowsBibleReadingPlan
             this.resetReadingPlanToolStripMenuItem.Name = "resetReadingPlanToolStripMenuItem";
             this.resetReadingPlanToolStripMenuItem.Size = new System.Drawing.Size(257, 26);
             this.resetReadingPlanToolStripMenuItem.Text = "Reset Reading Plan";
+            this.resetReadingPlanToolStripMenuItem.Visible = false;
             this.resetReadingPlanToolStripMenuItem.Click += new System.EventHandler(this.resetReadingPlanToolStripMenuItem_Click);
             // 
             // uxAllowExtraReading
@@ -128,7 +129,7 @@ namespace WindowsBibleReadingPlan
             this.uxAllowExtraReading.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.setBibleVersionToolStripMenuItem,
             this.allowExtraReadingToolStripMenuItem,
-            this.runAtStartUpToolStripMenuItem});
+            this.enableColoredTextToolStripMenuItem});
             this.uxAllowExtraReading.Name = "uxAllowExtraReading";
             this.uxAllowExtraReading.Size = new System.Drawing.Size(76, 24);
             this.uxAllowExtraReading.Text = "Settings";
@@ -146,13 +147,6 @@ namespace WindowsBibleReadingPlan
             this.allowExtraReadingToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
             this.allowExtraReadingToolStripMenuItem.Text = "Allow Extra Reading";
             this.allowExtraReadingToolStripMenuItem.Click += new System.EventHandler(this.allowExtraReadingToolStripMenuItem_Click);
-            // 
-            // runAtStartUpToolStripMenuItem
-            // 
-            this.runAtStartUpToolStripMenuItem.Name = "runAtStartUpToolStripMenuItem";
-            this.runAtStartUpToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
-            this.runAtStartUpToolStripMenuItem.Text = "Run at Start Up";
-            this.runAtStartUpToolStripMenuItem.Click += new System.EventHandler(this.runAtStartUpToolStripMenuItem_Click);
             // 
             // uxReading
             // 
@@ -243,6 +237,7 @@ namespace WindowsBibleReadingPlan
             // 
             // selectNewReadingPlanButton
             // 
+            this.selectNewReadingPlanButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.selectNewReadingPlanButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.selectNewReadingPlanButton.Location = new System.Drawing.Point(13, 74);
             this.selectNewReadingPlanButton.Margin = new System.Windows.Forms.Padding(4);
@@ -255,6 +250,7 @@ namespace WindowsBibleReadingPlan
             // 
             // selectOldReadingPlanButton
             // 
+            this.selectOldReadingPlanButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.selectOldReadingPlanButton.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.selectOldReadingPlanButton.Location = new System.Drawing.Point(13, 188);
             this.selectOldReadingPlanButton.Margin = new System.Windows.Forms.Padding(4);
@@ -264,6 +260,13 @@ namespace WindowsBibleReadingPlan
             this.selectOldReadingPlanButton.Text = "Select Old Reading Plan";
             this.selectOldReadingPlanButton.UseVisualStyleBackColor = true;
             this.selectOldReadingPlanButton.Click += new System.EventHandler(this.selectOldReadingPlanButton_Click);
+            // 
+            // enableColoredTextToolStripMenuItem
+            // 
+            this.enableColoredTextToolStripMenuItem.Name = "enableColoredTextToolStripMenuItem";
+            this.enableColoredTextToolStripMenuItem.Size = new System.Drawing.Size(226, 26);
+            this.enableColoredTextToolStripMenuItem.Text = "Enable Colored Text";
+            this.enableColoredTextToolStripMenuItem.Click += new System.EventHandler(this.enableColoredTextToolStripMenuItem_Click);
             // 
             // UserInterface
             // 
@@ -285,6 +288,7 @@ namespace WindowsBibleReadingPlan
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
             this.Name = "UserInterface";
             this.Text = "Bible Reading Plan";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -314,9 +318,9 @@ namespace WindowsBibleReadingPlan
         private System.Windows.Forms.ToolStripMenuItem resetReadingPlanToolStripMenuItem;
         private System.Windows.Forms.Button uxDidntReadAhead;
         private System.Windows.Forms.ToolStripMenuItem allowExtraReadingToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem runAtStartUpToolStripMenuItem;
         private System.Windows.Forms.Button selectNewReadingPlanButton;
         private System.Windows.Forms.Button selectOldReadingPlanButton;
+        private System.Windows.Forms.ToolStripMenuItem enableColoredTextToolStripMenuItem;
     }
 }
 

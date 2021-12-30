@@ -3,7 +3,7 @@
 "VSVersion" = "3:800"
 "ProjectType" = "8:{978C614F-708E-4E1A-B201-565925725DBA}"
 "IsWebType" = "8:FALSE"
-"ProjectName" = "8:BibleReadingPlan"
+"ProjectName" = "8:Installer"
 "LanguageId" = "3:1033"
 "CodePage" = "3:1252"
 "UILanguageId" = "3:1033"
@@ -15,37 +15,43 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0336F37A844345E780246276EE8F9E29"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_1D25B7DBDC5149699790179EF726C29A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_2269729B47D94F608158317121269983"
+        "MsmKey" = "8:_220E201C75B54657BEF8D79B2DB294AD"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_9B27103E4E654D58815BB254A4122CB4"
+        "MsmKey" = "8:_22FEC30049DC4597B2AD1A314B5E486C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B432B404E6DE4F70B355BB368D286ADF"
+        "MsmKey" = "8:_50BBD18C2BBA4B7EBFAC7FAB29EAE80B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_B72298AAC4494DD4835FD9FB76B77BCE"
+        "MsmKey" = "8:_54376ED191294C78ADEDC86F074239F3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_DAED63260669413B91616129F6228CC6"
+        "MsmKey" = "8:_BA8F872A3D4149BFA497C3FE7667EDED"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -151,7 +157,7 @@
             "SourcePath" = "8:..\\WindowsBibleReadingPlan\\logo.ico"
             "TargetName" = "8:logo.ico"
             "Tag" = "8:"
-            "Folder" = "8:_1D00E11B209A4C4EAAED037B2C1287D1"
+            "Folder" = "8:_803C7C4BD4DE45E1B3F6A8B7DB2C030A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -166,52 +172,12 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2269729B47D94F608158317121269983"
-            {
-            "SourcePath" = "8:..\\WindowsBibleReadingPlan\\data"
-            "TargetName" = "8:data"
-            "Tag" = "8:"
-            "Folder" = "8:_1D00E11B209A4C4EAAED037B2C1287D1"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9B27103E4E654D58815BB254A4122CB4"
-            {
-            "SourcePath" = "8:..\\WindowsBibleReadingPlan\\Plans\\OldTestament.json"
-            "TargetName" = "8:OldTestament.json"
-            "Tag" = "8:"
-            "Folder" = "8:_9312F83B9468495B82DC1CF7FF28B5CA"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B432B404E6DE4F70B355BB368D286ADF"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_220E201C75B54657BEF8D79B2DB294AD"
             {
             "SourcePath" = "8:..\\WindowsBibleReadingPlan\\Plans\\BibleInYear.json"
             "TargetName" = "8:BibleInYear.json"
             "Tag" = "8:"
-            "Folder" = "8:_9312F83B9468495B82DC1CF7FF28B5CA"
+            "Folder" = "8:_05D730AE8F254ADB9A49AC61CD7A5EB6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -226,12 +192,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B72298AAC4494DD4835FD9FB76B77BCE"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_22FEC30049DC4597B2AD1A314B5E486C"
             {
             "SourcePath" = "8:..\\WindowsBibleReadingPlan\\Plans\\NewTestament.json"
             "TargetName" = "8:NewTestament.json"
             "Tag" = "8:"
-            "Folder" = "8:_9312F83B9468495B82DC1CF7FF28B5CA"
+            "Folder" = "8:_05D730AE8F254ADB9A49AC61CD7A5EB6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_50BBD18C2BBA4B7EBFAC7FAB29EAE80B"
+            {
+            "SourcePath" = "8:..\\WindowsBibleReadingPlan\\data"
+            "TargetName" = "8:data"
+            "Tag" = "8:"
+            "Folder" = "8:_E5F56FDA367B46739296945DCC750851"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_54376ED191294C78ADEDC86F074239F3"
+            {
+            "SourcePath" = "8:..\\WindowsBibleReadingPlan\\Plans\\BibleWithApocrypha.json"
+            "TargetName" = "8:BibleWithApocrypha.json"
+            "Tag" = "8:"
+            "Folder" = "8:_05D730AE8F254ADB9A49AC61CD7A5EB6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BA8F872A3D4149BFA497C3FE7667EDED"
+            {
+            "SourcePath" = "8:..\\WindowsBibleReadingPlan\\Plans\\OldTestament.json"
+            "TargetName" = "8:OldTestament.json"
+            "Tag" = "8:"
+            "Folder" = "8:_05D730AE8F254ADB9A49AC61CD7A5EB6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -263,6 +289,39 @@
                 {
                 }
             }
+            "{1525181F-901A-416C-8A58-119130FE478E}:_151B1E1F4A264F0094D09F33D8E8491F"
+            {
+            "Name" = "8:#1915"
+            "AlwaysCreate" = "11:FALSE"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Property" = "8:AppDataFolder"
+                "Folders"
+                {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_E5F56FDA367B46739296945DCC750851"
+                    {
+                    "Name" = "8:BibleReadingPlan"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_3287DFFA12F84C678524D9703DDC593D"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_05D730AE8F254ADB9A49AC61CD7A5EB6"
+                            {
+                            "Name" = "8:Plans"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_23143C051B0E4A9D8870910F6F284BCE"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_1D00E11B209A4C4EAAED037B2C1287D1"
             {
             "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
@@ -273,13 +332,13 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
-                    "{9EF0B969-E518-4E46-987F-47570745A589}:_9312F83B9468495B82DC1CF7FF28B5CA"
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_803C7C4BD4DE45E1B3F6A8B7DB2C030A"
                     {
-                    "Name" = "8:Plans"
+                    "Name" = "8:BibleReadingPlan"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
-                    "Property" = "8:_5F0AC747ACB340D0A472306368E2E690"
+                    "Property" = "8:_09C4D9CF05664E3CBD009C0B780A66A9"
                         "Folders"
                         {
                         }
@@ -325,7 +384,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:BibleReadingPlan"
         "ProductCode" = "8:{C0039B79-E54D-4664-B730-A493634E5717}"
-        "PackageCode" = "8:{43BF63B6-AC51-4A65-B840-79138A684692}"
+        "PackageCode" = "8:{90BB6604-CEC8-40F7-8A60-4C9D71F007F1}"
         "UpgradeCode" = "8:{EF09F0A5-09D0-4706-8FBF-6A2F48086F32}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
@@ -445,45 +504,45 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_509905CC173643EDBBD425468BCDE30A"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_0AE66B4FDC09487AB472380028CCFD15"
             {
-            "Name" = "8:WindowsBibleReadingPlan"
+            "Name" = "8:BibleReadingPlan"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_DAED63260669413B91616129F6228CC6"
-            "Folder" = "8:_5B100CA0F1264CA59E4A40883375ED78"
-            "WorkingFolder" = "8:_1D00E11B209A4C4EAAED037B2C1287D1"
-            "Icon" = "8:_1D25B7DBDC5149699790179EF726C29A"
-            "Feature" = "8:"
-            }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_B536A51386804044839E7A58A66D89AE"
-            {
-            "Name" = "8:WindowsBibleReadingPlan"
-            "Arguments" = "8:"
-            "Description" = "8:"
-            "ShowCmd" = "3:1"
-            "IconIndex" = "3:0"
-            "Transitive" = "11:FALSE"
-            "Target" = "8:_DAED63260669413B91616129F6228CC6"
+            "Target" = "8:_0336F37A844345E780246276EE8F9E29"
             "Folder" = "8:_134EAE0A6854496BAB4B6A677F26EC69"
-            "WorkingFolder" = "8:_1D00E11B209A4C4EAAED037B2C1287D1"
+            "WorkingFolder" = "8:_803C7C4BD4DE45E1B3F6A8B7DB2C030A"
             "Icon" = "8:_1D25B7DBDC5149699790179EF726C29A"
             "Feature" = "8:"
             }
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_C4FAC2D058364225A764084E045BA55B"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_AAB8EB3C33404513814AD9C1125AA3E7"
             {
-            "Name" = "8:WindowsBibleReadingPlan"
+            "Name" = "8:BibleReadingPlan"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_DAED63260669413B91616129F6228CC6"
+            "Target" = "8:_0336F37A844345E780246276EE8F9E29"
             "Folder" = "8:_AF0C9916EFA64823BB9D72C119F6E4A0"
-            "WorkingFolder" = "8:_1D00E11B209A4C4EAAED037B2C1287D1"
+            "WorkingFolder" = "8:_803C7C4BD4DE45E1B3F6A8B7DB2C030A"
+            "Icon" = "8:_1D25B7DBDC5149699790179EF726C29A"
+            "Feature" = "8:"
+            }
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_F33FA58F10D64169A18245A4C0359979"
+            {
+            "Name" = "8:BibleReadingPlan"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_0336F37A844345E780246276EE8F9E29"
+            "Folder" = "8:_5B100CA0F1264CA59E4A40883375ED78"
+            "WorkingFolder" = "8:_803C7C4BD4DE45E1B3F6A8B7DB2C030A"
             "Icon" = "8:_1D25B7DBDC5149699790179EF726C29A"
             "Feature" = "8:"
             }
@@ -886,12 +945,12 @@
         }
         "ProjectOutput"
         {
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DAED63260669413B91616129F6228CC6"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_0336F37A844345E780246276EE8F9E29"
             {
             "SourcePath" = "8:..\\WindowsBibleReadingPlan\\obj\\Release\\net5.0-windows\\apphost.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
-            "Folder" = "8:_1D00E11B209A4C4EAAED037B2C1287D1"
+            "Folder" = "8:_803C7C4BD4DE45E1B3F6A8B7DB2C030A"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"

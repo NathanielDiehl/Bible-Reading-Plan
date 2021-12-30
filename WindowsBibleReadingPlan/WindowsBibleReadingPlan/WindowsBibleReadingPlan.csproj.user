@@ -4,9 +4,6 @@
     <_LastSelectedProfileId>D:\Documents\_Programming\C#\Bible-Reading-Plan\WindowsBibleReadingPlan\WindowsBibleReadingPlan\Properties\PublishProfiles\FolderProfile1.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="PlanSelector.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="UserInterface.cs">
       <SubType>Form</SubType>
     </Compile>
