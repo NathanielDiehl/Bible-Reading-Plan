@@ -225,6 +225,7 @@ namespace WindowsBibleReadingPlan
             LineUp();
             ReadData();
             if (_fileName != "0") {
+                resetReadingPlanToolStripMenuItem.Visible = true;
                 ReadPlan();
                 SetUp();
             }
